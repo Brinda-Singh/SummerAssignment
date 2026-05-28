@@ -1,0 +1,73 @@
+//ques 1
+import java.util.Scanner;
+
+public class SumNaturalNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter value of n: ");
+        int n = sc.nextInt();
+
+        int sum = 0;
+
+        for (int i = 1; i <= n; i++) {
+            sum = sum + i;
+        }
+
+        System.out.println("Sum of first " + n + " natural numbers = " + sum);
+    }
+}
+//ques 2
+import java.util.Scanner;
+
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(num + " x " + i + " = " + (num * i));
+        }
+    }
+}
+//ques 3
+import java.util.Scanner;
+
+public class FactorialProgram {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        int factorial = 1;
+
+        for (int i = 1; i <= num; i++) {
+            factorial = factorial * i;
+        }
+
+        System.out.println("Factorial = " + factorial);
+    }
+}
+//ques 4
+import java.util.Scanner;
+
+public class CountDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        int count = 0;
+
+        while (num != 0) {
+            num = num / 10;
+            count++;
+        }
+
+        System.out.println("Number of digits = " + count);
+    }
+}

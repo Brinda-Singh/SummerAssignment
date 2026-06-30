@@ -1,0 +1,121 @@
+//ques 13
+import java.util.Scanner;
+
+public class FibonacciSeries {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of terms: ");
+        int n = sc.nextInt();
+        
+        int a = 0; 
+        int b = 1; 
+        
+        System.out.print("Fibonacci Series: ");
+        
+        for (int i = 1; i <= n; i++) {
+            System.out.print(a + " "); 
+            int nextTerm = a + b;
+            a = b;         
+            b = nextTerm; 
+    }
+}
+//ques 14
+import java.util.Scanner;
+
+public class NthFibonacci {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the value of n: ");
+        int n = sc.nextInt();
+        
+        int a = 0;
+        int b = 1;
+        int nthTerm = 0;
+        
+        if (n == 1) 
+            nthTerm = a; 
+        
+        else if (n == 2) 
+            nthTerm = b;
+        
+        else {
+            for (int i = 3; i <= n; i++) {
+                nthTerm = a + b;
+                a = b;
+                b = nthTerm;
+            }
+        }
+        
+        System.out.println("The " + n + "th Fibonacci term is: " + nthTerm);
+    }
+}
+//ques 15
+import java.util.Scanner;
+
+public class ArmstrongCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+        
+        int temp = num;
+        int digits = 0;
+        int sum = 0;
+        
+        while (temp1 > 0) {
+            digits++;
+            temp1 = temp1 / 10;
+        }
+
+        temp = num
+        
+        while (temp > 0) {
+            int rem = temp % 10;
+            sum = sum + (int) Math.pow(rem, digits); 
+            temp = temp / 10;
+        }
+        
+        if (num == sum) {
+            System.out.println(num + " is an Armstrong number.");
+        } else {
+            System.out.println(num + " is not an Armstrong number.");
+        }
+    }
+}
+//ques 16
+import java.util.Scanner;
+
+public class ArmstrongRange {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter starting number: ");
+        int start = sc.nextInt();
+        System.out.print("Enter ending number: ");
+        int end = sc.nextInt();
+        
+        System.out.println("Armstrong numbers between " + start + " and " + end + " are:");
+        
+        for (int i = start; i <= end; i++) {
+            int temp1 = i;
+            int digits = 0;
+            int sum = 0;
+            
+            while (temp > 0) {
+                digits++;
+                temp = temp / 10;
+            }
+
+            temp = i
+
+            while (temp > 0) {
+                int rem = temp % 10;
+                sum = sum + (int) Math.pow(rem, digits);
+                temp = temp / 10;
+            }
+
+            if (i == sum) 
+                System.out.print(i + " ");
+            
+        }
+    }
+}

@@ -1,0 +1,90 @@
+//ques 89
+import java.util.Scanner;
+public class RemoveSpaces {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        String res = "";
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) != ' ') {
+                res += str.charAt(i);
+            }
+        }
+        System.out.println(res);
+    }
+}
+//ques 90
+import java.util.Scanner;
+public class FirstRepeating {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        boolean found = false;
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = i + 1; j < str.length(); j++) {
+                if (str.charAt(i) == str.charAt(j)) {
+                    System.out.println(str.charAt(i));
+                    found = true;
+                    break;
+                }
+            }
+            if (found) break;
+        }
+    }
+}
+//ques 91
+import java.util.Scanner;
+public class AnagramCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.next().toLowerCase();
+        String s2 = sc.next().toLowerCase();
+        if (s1.length() != s2.length()) {
+            System.out.println("false");
+            return;
+        }
+        char[] arr1 = s1.toCharArray();
+        char[] arr2 = s2.toCharArray();
+        for (int i = 0; i < arr1.length - 1; i++) {
+            for (int j = 0; j < arr1.length - i - 1; j++) {
+                if (arr1[j] > arr1[j + 1]) {
+                    char temp = arr1[j]; arr1[j] = arr1[j + 1]; arr1[j + 1] = temp;
+                }
+                if (arr2[j] > arr2[j + 1]) {
+                    char temp = arr2[j]; arr2[j] = arr2[j + 1]; arr2[j + 1] = temp;
+                }
+            }
+        }
+        boolean isAnagram = true;
+        for (int i = 0; i < arr1.length; i++) {
+            if (arr1[i] != arr2[i]) {
+                isAnagram = false;
+                break;
+            }
+        }
+        System.out.println(isAnagram);
+    }
+}
+//ques 92
+import java.util.Scanner;
+public class MaxOccurringChar {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        char maxChar = str.charAt(0);
+        int maxCount = 0;
+        for (int i = 0; i < str.length(); i++) {
+            int count = 0;
+            for (int j = 0; j < str.length(); j++) {
+                if (str.charAt(i) == str.charAt(j)) {
+                    count++;
+                }
+            }
+            if (count > maxCount) {
+                maxCount = count;
+                maxChar = str.charAt(i);
+            }
+        }
+        System.out.println(maxChar);
+    }
+}

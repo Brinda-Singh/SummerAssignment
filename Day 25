@@ -1,0 +1,83 @@
+//ques 97
+import java.util.Scanner;
+public class MergeSortedArrays {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n1 = sc.nextInt();
+        int[] a = new int[n1];
+        for (int i = 0; i < n1; i++) a[i] = sc.nextInt();
+        int n2 = sc.nextInt();
+        int[] b = new int[n2];
+        for (int i = 0; i < n2; i++) b[i] = sc.nextInt();
+        int[] c = new int[n1 + n2];
+        int i = 0, j = 0, k = 0;
+        while (i < n1 && j < n2) {
+            if (a[i] < b[j]) c[k++] = a[i++];
+            else c[k++] = b[j++];
+        }
+        while (i < n1) c[k++] = a[i++];
+        while (j < n2) c[k++] = b[j++];
+        for (int x = 0; x < c.length; x++) System.out.print(c[x] + " ");
+    }
+}
+//ques 98
+import java.util.Scanner;
+public class CommonChars {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.next();
+        String s2 = sc.next();
+        for (int i = 0; i < s1.length(); i++) {
+            for (int j = 0; j < s2.length(); j++) {
+                if (s1.charAt(i) == s2.charAt(j)) {
+                    boolean alreadyPrinted = false;
+                    for (int k = 0; k < i; k++) {
+                        if (s1.charAt(i) == s1.charAt(k)) alreadyPrinted = true;
+                    }
+                    if (!alreadyPrinted) System.out.print(s1.charAt(i) + " ");
+                    break;
+                }
+            }
+        }
+    }
+}
+//ques 99
+import java.util.Scanner;
+public class SortNames {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String[] names = new String[n];
+        for (int i = 0; i < n; i++) names[i] = sc.next();
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (names[j].compareTo(names[j + 1]) > 0) {
+                    String temp = names[j];
+                    names[j] = names[j + 1];
+                    names[j + 1] = temp;
+                }
+            }
+        }
+        for (int i = 0; i < n; i++) System.out.println(names[i]);
+    }
+}
+//ques 100
+import java.util.Scanner;
+public class SortWordsByLength {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String[] words = new String[n];
+        for (int i = 0; i < n; i++) words[i] = sc.next();
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (words[j].length() > words[j + 1].length()) {
+                    String temp = words[j];
+                    words[j] = words[j + 1];
+                    words[j + 1] = temp;
+                }
+            }
+        }
+        for (int i = 0; i < n; i++) System.out.println(words[i]);
+    }
+}

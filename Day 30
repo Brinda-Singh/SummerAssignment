@@ -1,0 +1,73 @@
+//ques 117
+import java.util.Scanner;
+public class StudentRecordArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String[] students = new String[2];
+        int[] marks = new int[2];
+        for (int i = 0; i < 2; i++) {
+            students[i] = sc.next();
+            marks[i] = sc.nextInt();
+        }
+        for (int i = 0; i < 2; i++) {
+            if (marks[i] >= 40) System.out.println(students[i] + " Passed");
+            else System.out.println(students[i] + " Failed");
+        }
+    }
+}
+//ques 118
+import java.util.Scanner;
+public class MiniLibrary {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String[] books = new String[3];
+        for (int i = 0; i < 3; i++) books[i] = sc.next();
+        String issue = sc.next();
+        for (int i = 0; i < 3; i++) {
+            if (books[i].equals(issue)) {
+                books[i] = "Issued";
+                System.out.println("Book issued successfully");
+            }
+        }
+    }
+}
+//ques 119
+import java.util.Scanner;
+public class MiniLibrary {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String[] books = new String[3];
+        for (int i = 0; i < 3; i++) books[i] = sc.next();
+        String issue = sc.next();
+        for (int i = 0; i < 3; i++) {
+            if (books[i].equals(issue)) {
+                books[i] = "Issued";
+                System.out.println("Book issued successfully");
+            }
+        }
+    }
+}
+//ques 120
+import java.util.Scanner;
+public class CompleteMiniProject {
+    public static void showTasks(String[] tasks, int count) {
+        for (int i = 0; i < count; i++) {
+            System.out.println((i + 1) + ". " + tasks[i]);
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String[] tasks = new String[10];
+        int count = 0;
+        int choice = 0;
+        while (choice != 3) {
+            choice = sc.nextInt();
+            if (choice == 1 && count < 10) {
+                tasks[count] = sc.next();
+                count++;
+            } else if (choice == 2) {
+                showTasks(tasks, count);
+            }
+        }
+    }
+}

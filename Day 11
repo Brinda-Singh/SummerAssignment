@@ -1,0 +1,59 @@
+//ques 41
+import java.util.Scanner;
+public class FuncSum {
+    public static int findSum(int a, int b) {
+        return a + b;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        System.out.println(findSum(x, y));
+    }
+}
+//ques 42
+import java.util.Scanner;
+public class FuncMax {
+    public static int findMax(int a, int b) {
+        if (a > b) return a;
+        else return b;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        System.out.println(findMax(x, y));
+    }
+}
+//ques 43
+import java.util.Scanner;
+public class FuncPrime {
+    public static boolean isPrime(int n) {
+        if (n <= 1) return false;
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(isPrime(n));
+    }
+}
+//ques 44
+import java.util.Scanner;
+public class FuncFact {
+    public static int getFactorial(int n) {
+        int fact = 1;
+        for (int i = 1; i <= n; i++) {
+            fact = fact * i;
+        }
+        return fact;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(getFactorial(n));
+    }
+}

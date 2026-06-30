@@ -1,0 +1,63 @@
+//ques 105
+import java.util.Scanner;
+public class StudentRecord {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String[] names = new String[3];
+        int[] rolls = new int[3];
+        for (int i = 0; i < 3; i++) {
+            names[i] = sc.next();
+            rolls[i] = sc.nextInt();
+        }
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Roll: " + rolls[i] + ", Name: " + names[i]);
+        }
+    }
+}
+//ques 106
+import java.util.Scanner;
+public class EmployeeManagement {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String empName = sc.next();
+        int empId = sc.nextInt();
+        String dept = sc.next();
+        System.out.println("ID: " + empId);
+        System.out.println("Name: " + empName);
+        System.out.println("Dept: " + dept);
+    }
+}
+//ques 107
+import java.util.Scanner;
+public class SalarySystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int basic = sc.nextInt();
+        int hra = (basic * 10) / 100;
+        int da = (basic * 5) / 100;
+        int total = basic + hra + da;
+        System.out.println("Total Salary: " + total);
+    }
+}
+//ques 108
+import java.util.Scanner;
+public class MarksheetSystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int math = sc.nextInt();
+        int phy = sc.nextInt();
+        int chem = sc.nextInt();
+        int eng = sc.nextInt();
+        int comp = sc.nextInt();
+        
+        int total = math + phy + chem + eng + comp;
+        double perc = total / 5.0;
+        
+        System.out.println("Total: " + total);
+        System.out.println("Percentage: " + perc + "%");
+        if (perc >= 90) System.out.println("Grade A");
+        else if (perc >= 75) System.out.println("Grade B");
+        else if (perc >= 50) System.out.println("Grade C");
+        else System.out.println("Fail");
+    }
+}

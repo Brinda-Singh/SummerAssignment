@@ -1,0 +1,106 @@
+//ques 9
+import java.util.Scanner;
+
+public class PrimeCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+        
+        int count = 0;
+        
+        if (num <= 1) 
+            count++; 
+        
+        else {
+            for (int i = 2; i < num; i++) {
+                if (num % i == 0) {
+                    count++;
+                    break; // Loop yahin rok denge
+                }
+            }
+        }
+        
+        if (count == 0) 
+            System.out.println(num + " is a prime number.");
+         
+        else 
+            System.out.println(num + " is not a prime number.");
+        
+    }
+}
+//ques 10
+import java.util.Scanner;
+
+public class PrimeRange {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter starting number: ");
+        int start = sc.nextInt();
+        System.out.print("Enter ending number: ");
+        int end = sc.nextInt();
+        
+        System.out.println("Prime numbers between " + start + " and " + end + " are:");
+        
+        for (int num = start; num <= end; num++) {
+            if (num <= 1) 
+                continue;    //ignore smaller than 1
+            
+            int count = 0;
+            for (int i = 2; i < num; i++) {
+                if (num % i == 0) {
+                    count++;
+                    break;
+                }
+            }
+          
+            if (count == 0) 
+                System.out.print(num + " ");
+          
+        }
+    }
+}
+//ques 11
+import java.util.Scanner;
+
+public class FindGCD {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        int num1 = sc.nextInt();
+        System.out.print("Enter second number: ");
+        int num2 = sc.nextInt();
+        
+        int gcd = 1;
+      
+        for (int i = 1; i <= num1 && i <= num2; i++) {
+            if (num1 % i == 0 && num2 % i == 0) {
+                gcd = i;
+            }
+        }
+        
+        System.out.println("GCD of " + num1 + " and " + num2 + " is: " + gcd);
+    }
+}
+//ques 12
+import java.util.Scanner;
+
+public class FindLCM {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        int num1 = sc.nextInt();
+        System.out.print("Enter second number: ");
+        int num2 = sc.nextInt();
+        
+        int max = (num1 > num2) ? num1 : num2; 
+        
+        while (true) {
+            if (max % num1 == 0 && max % num2 == 0) {
+                System.out.println("LCM of " + num1 + " and " + num2 + " is: " + max);
+                break; 
+            }
+            max++; // Agar divide nahi hua toh max ko 1 se badhao aur fir check karo
+        }
+    }
+}

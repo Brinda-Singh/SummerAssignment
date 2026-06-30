@@ -1,0 +1,60 @@
+//ques 113
+import java.util.Scanner;
+public class MenuCalculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int choice = sc.nextInt();
+        switch (choice) {
+            case 1: System.out.println(a + b); break;
+            case 2: System.out.println(a - b); break;
+            case 3: System.out.println(a * b); break;
+            case 4: System.out.println(a / b); break;
+            default: System.out.println("Invalid choice");
+        }
+    }
+}
+//ques 114
+import java.util.Scanner;
+public class ArrayOps {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr = {10, 20, 30};
+        int choice = sc.nextInt();
+        if (choice == 1) {
+            System.out.println(arr[0] + arr[1] + arr[2]);
+        } else if (choice == 2) {
+            for (int i = 0; i < 3; i++) System.out.print(arr[i] + " ");
+        }
+    }
+}
+//ques 115
+import java.util.Scanner;
+public class StringOps {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        int choice = sc.nextInt();
+        if (choice == 1) {
+            System.out.println(s.length());
+        } else if (choice == 2) {
+            System.out.println(s.toUpperCase());
+        }
+    }
+}
+//ques 116
+import java.util.Scanner;
+public class InventorySystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int stock = 100;
+        int sold = sc.nextInt();
+        if (sold <= stock) {
+            stock -= sold;
+            System.out.println("Sold. Stock left: " + stock);
+        } else {
+            System.out.println("Out of stock");
+        }
+    }
+}

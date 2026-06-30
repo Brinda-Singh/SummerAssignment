@@ -1,0 +1,70 @@
+//ques 101
+import java.util.Scanner;
+public class NumberGuessing {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int target = 45; 
+        int guess = 0;
+        while (guess != target) {
+            System.out.println("Enter guess (1-100): ");
+            guess = sc.nextInt();
+            if (guess > target) System.out.println("Too high!");
+            else if (guess < target) System.out.println("Too low!");
+            else System.out.println("You won!");
+        }
+    }
+}
+//ques 102
+import java.util.Scanner;
+public class VotingSystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String name = sc.next();
+        int age = sc.nextInt();
+        if (age >= 18) {
+            System.out.println(name + " is eligible to vote.");
+        } else {
+            System.out.println(name + " is not eligible to vote.");
+        }
+    }
+}
+//ques 103
+import java.util.Scanner;
+public class ATMSimulation {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int balance = 5000;
+        int choice = 0;
+        while (choice != 4) {
+            System.out.println("1.Check Balance  2.Deposit  3.Withdraw  4.Exit");
+            choice = sc.nextInt();
+            if (choice == 1) {
+                System.out.println("Balance: " + balance);
+            } else if (choice == 2) {
+                int dep = sc.nextInt();
+                balance += dep;
+            } else if (choice == 3) {
+                int wid = sc.nextInt();
+                if (wid <= balance) balance -= wid;
+                else System.out.println("Insufficient balance");
+            }
+        }
+    }
+}
+//ques 104
+import java.util.Scanner;
+public class QuizApp {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int score = 0;
+        System.out.println("Q1. Size of int in Java? (a) 2 (b) 4 (c) 8");
+        char ans1 = sc.next().charAt(0);
+        if (ans1 == 'b') score += 10;
+        
+        System.out.println("Q2. Array index starts from? (a) 0 (b) 1 (c) 2");
+        char ans2 = sc.next().charAt(0);
+        if (ans2 == 'a') score += 10;
+        
+        System.out.println("Total Score: " + score);
+    }
+}

@@ -1,0 +1,87 @@
+//ques 53
+import java.util.Scanner;
+public class LinearSearch {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int target = sc.nextInt();
+        boolean found = false;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == target) {
+                System.out.println("Found at index " + i);
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            System.out.println("Not found");
+        }
+    }
+}
+//ques 54
+import java.util.Scanner;
+public class ElementFrequency {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int target = sc.nextInt();
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == target) {
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
+//ques 55
+import java.util.Scanner;
+public class SecondLargest {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int max = arr[0];
+        for (int i = 1; i < n; i++) {
+            if (arr[i] > max) max = arr[i];
+        }
+        int secondMax = -2147483648;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] > secondMax && arr[i] < max) {
+                secondMax = arr[i];
+            }
+        }
+        System.out.println(secondMax);
+    }
+}
+//ques 56
+import java.util.Scanner;
+public class FindDuplicates {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (arr[i] == arr[j]) {
+                    System.out.println(arr[i]);
+                    break;
+                }
+            }
+        }
+    }
+}

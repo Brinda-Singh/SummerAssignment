@@ -1,0 +1,71 @@
+//ques 21
+import java.util.Scanner;
+public class DecimalToBinary {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a decimal number: ");
+        int num = sc.nextInt();
+        
+        String binary = "";
+        while (num > 0) {
+            int rem = num % 2;
+            binary = rem + binary; 
+            num = num / 2;
+        }
+        System.out.println("Binary string is: " + binary);
+    }
+}
+//ques 22
+import java.util.Scanner;
+public class BinaryToDecimal {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a binary number: ");
+        int binary = sc.nextInt();
+        
+        int decimal = 0, power = 0;
+        while (binary > 0) {
+            int rem = binary % 10;
+            decimal += rem * Math.pow(2, power);
+            binary = binary / 10;
+            power++;
+        }
+        System.out.println("Decimal number is: " + decimal);
+    }
+}
+//ques 23
+import java.util.Scanner;
+public class CountSetBits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+        int count = 0;
+        
+        while (num > 0) {
+            if (num % 2 == 1) { 
+                count++;
+            }
+            num = num / 2;
+        }
+        System.out.println("Number of set bits: " + count);
+    }
+}
+//ques 24
+import java.util.Scanner;
+public class PowerCalculation {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter base (x): ");
+        int x = sc.nextInt();
+        System.out.print("Enter exponent (n): ");
+        int n = sc.nextInt();
+        
+        int result = 1;
+        
+        for (int i = 1; i <= n; i++) {
+            result = result * x;
+        }
+        System.out.println(x + " raised to " + n + " is: " + result);
+    }
+}
